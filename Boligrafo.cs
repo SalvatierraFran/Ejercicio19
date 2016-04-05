@@ -27,9 +27,37 @@ namespace Ejercicio19_2._0
         }
 
         public bool Pintar(int gasto)
-        { }
+        {
+            bool pintando;
+
+            if (this._tinta >= gasto)
+            {
+                Console.Write("Pintando...");
+                this._tinta = this._tinta - gasto;
+                pintando = true;
+            }
+            else
+            {
+                Console.Write("No hay suficiente tinta");
+                this._tinta = this._tinta - gasto;
+                pintando = false;
+            }
+
+            return pintando;
+        }
 
         public void Recargar()
-        { }
+        {
+            if (this._tinta <= 0)
+            {
+                Console.Write("\nRecargando...");
+                this._tinta = 100;
+                Console.Write("\nCartucho cargado");
+            }
+            else
+            {
+                Console.Write("\nTodavía hay tinta");
+            }
+        }
     }
 }
